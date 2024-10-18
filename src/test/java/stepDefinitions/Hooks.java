@@ -13,8 +13,8 @@ public class Hooks {
 
         if (scenario.isFailed()) {
             TakesScreenshot ts = ((TakesScreenshot) GWD.getDriver());
-            byte[] hafizadakiHali = ts.getScreenshotAs(OutputType.BYTES);
-            scenario.attach(hafizadakiHali, "image/png", "screenshot name");
+            byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);
+            scenario.attach(bytes, "image/png", "screenshot name");
         }
         GWD.tearDown();
     }
