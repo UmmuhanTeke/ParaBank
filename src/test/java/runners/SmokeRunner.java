@@ -1,2 +1,4 @@
-package runners;public class SmokeRunner {
+package runners;
+
+public class SmokeRunner {
 }
