@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
-     static Properties properties = new Properties();
+     private static Properties properties = new Properties();
 
     static {
         try {
