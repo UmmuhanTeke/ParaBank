@@ -45,6 +45,10 @@ public class ParentPage {
         js.executeScript("arguments[0].click();", element);
     }
 
+    public static int randomGenerator(int range) {
+        return (int) (Math.random() * range);
+    }
+
     public static boolean listContainsString(List<WebElement> list, String search) {
         boolean isFound = false;
         for (WebElement e : list) {
