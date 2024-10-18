@@ -1,4 +1,4 @@
 package runners;
 
-public class ParallelAllRunner {
+public class Parallel_AllRunner {
 }
