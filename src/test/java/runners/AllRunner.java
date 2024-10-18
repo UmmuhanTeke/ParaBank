@@ -1,2 +1,4 @@
-package runners;public class AllRunner {
+package runners;
+
+public class AllRunner {
 }
