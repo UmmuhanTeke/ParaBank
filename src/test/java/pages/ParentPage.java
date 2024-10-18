@@ -1,5 +1,6 @@
 package pages;
 
+import utilities.ConfigReader;
 import utilities.GWD;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -13,11 +14,10 @@ import java.time.Duration;
 import java.util.List;
 
 public class ParentPage {
-    public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
+    public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(ConfigReader.getIntProperty("explicit.wait")));
 
     public void myClick(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
-        //scrollToElement(element);
         element.click();
     }
 
@@ -60,7 +60,7 @@ public class ParentPage {
 
     public void wait(int sn) {
         try {
-            Thread.sleep(sn * 1000);
+            Thread.sleep(sn * 1000L);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
