@@ -1,5 +1,6 @@
 Feature: Register Functionality
 
+
   Scenario: Creation of User Record
     Given Navigate to the ParaBank website
     When Click on the Register button

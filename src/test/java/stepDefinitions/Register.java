@@ -12,6 +12,7 @@ import utilities.GWD;
 import java.util.Locale;
 
 public class Register {
+
     Login login = new Login();
     Faker faker=new Faker(new Locale("en-US"));
 

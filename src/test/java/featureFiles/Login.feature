@@ -11,5 +11,5 @@ Feature: Login Functionality
     When  Enter "<invalidUsername>" and "<invalidPassword>" and click login button
     Then  message should be displayed
     Examples:
-      |invalidUsername  |invalidPassword|
-      |VivanC1235298  |uk9gpok3wgwo34345|
+      | invalidUsername | invalidPassword   |
+      | VivanC1235298   | uk9gpok3wgwo34345 |
