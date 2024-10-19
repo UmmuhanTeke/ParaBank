@@ -2,12 +2,9 @@ package stepDefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import utilities.ConfigReader;
 
 public class Login {
-    private static final Logger log = LoggerFactory.getLogger(Login.class);
     pages.Login login = new pages.Login();
 
     @When("Enter username and password and click login button")
