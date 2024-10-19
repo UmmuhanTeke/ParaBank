@@ -37,5 +37,4 @@ public class Login {
     public void messageShouldBeDisplayed() {
         login.verifyContainsText(login.errorMessage,"not be verified.");
     }
-
 }
