@@ -52,6 +52,9 @@ public class Login extends ParentPage {
     @FindBy(id = "repeatedPassword")
     public WebElement confirmPassword;
 
+    @FindBy(id = "customer.username.errors")
+    public WebElement usernameError;
+
     @FindBy(css = "[class='title']")
     public WebElement registerControl;
 

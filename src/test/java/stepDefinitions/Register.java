@@ -14,11 +14,11 @@ import java.util.Locale;
 public class Register {
 
     Login login = new Login();
-    Faker faker=new Faker(new Locale("en-US"));
+    Faker faker = new Faker(new Locale("en-US"));
 
     @Given("Navigate to the ParaBank website")
     public void navigateToTheParaBankWebsite() {
-        GWD.getDriver().get(ConfigReader.getProperty("URL"));
+        GWD.getDriver().get("https://parabank.parasoft.com/");
     }
 
     @When("Click on the Register button")
@@ -31,25 +31,30 @@ public class Register {
 
         login.mySendKeys(login.firstName, faker.name().firstName());
 
-        login.mySendKeys(login.lastName,faker.name().lastName());
+        login.mySendKeys(login.lastName, faker.name().lastName());
 
-        login.mySendKeys(login.address,faker.address().fullAddress());
+        login.mySendKeys(login.address, faker.address().fullAddress());
 
-        login.mySendKeys(login.city,faker.address().city());
+        login.mySendKeys(login.city, faker.address().city());
 
-        login.mySendKeys(login.state,faker.address().state());
+        login.mySendKeys(login.state, faker.address().state());
 
-        login.mySendKeys(login.zipCode,faker.address().zipCode());
+        login.mySendKeys(login.zipCode, faker.address().zipCode());
 
-        login.mySendKeys(login.phoneNumber,faker.phoneNumber().cellPhone());
+        login.mySendKeys(login.phoneNumber, faker.phoneNumber().cellPhone());
 
-        login.mySendKeys(login.ssn,faker.idNumber().ssnValid());
+        login.mySendKeys(login.ssn, faker.idNumber().ssnValid());
 
-        login.mySendKeys(login.registerUsername,ConfigReader.getProperty("username"));
+        ConfigReader.updateProperty("username");
 
-        login.mySendKeys(login.registerPassword,ConfigReader.getProperty("password"));
+        login.mySendKeys(login.registerUsername, ConfigReader.getProperty("username"));
 
-        login.mySendKeys(login.confirmPassword,ConfigReader.getProperty("password"));
+        ConfigReader.updateProperty("password");
+
+        login.mySendKeys(login.registerPassword, ConfigReader.getProperty("password"));
+
+        login.mySendKeys(login.confirmPassword, ConfigReader.getProperty("password"));
+
     }
 
     @Then("Click on the Register Submit Button and success message should be displayed")
