@@ -25,6 +25,7 @@ Feature: Checking Account Functionality
 
     Then The user confirms the successful creation of the new bank account
 
+
   Scenario: Savings Account
 
     When Click on the Element in Content

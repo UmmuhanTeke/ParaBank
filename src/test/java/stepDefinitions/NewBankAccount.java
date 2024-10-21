@@ -10,6 +10,7 @@ public class NewBankAccount {
         
     }
 
+
     @And("The user is directed to the bank account creating page")
     public void theUserIsDirectedToTheBankAccountCreatingPage() {
         
