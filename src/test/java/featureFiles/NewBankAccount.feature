@@ -15,15 +15,15 @@ Feature: Open a Bank Account Functionality
 
     And The user receives a warning that the new bank account should have a minimum balance
 
-    And The user selects the "<accountNumber>" from the Drop-Down menu
+    And The user selects the accountNumber from the Drop-Down menu
 
-    And Click on the Element in Content
+    And Click on the Element in Button
       | openNewAccountButton |
 
     Then The user confirms the successful creation of the new bank account
 
     Examples:
-      | accountType      | accountNumber |
-      | Checking Account | 123456        |
-      | Savings Account  | 789012        |
+      | accountType      |
+      | Checking Account |
+      | Savings Account  |
 
