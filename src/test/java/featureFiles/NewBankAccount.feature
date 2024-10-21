@@ -1,4 +1,4 @@
-Feature: Checking Account Functionality
+Feature: Open a Bank Account Functionality
 
   Background:
     Given Navigate to the ParaBank website
