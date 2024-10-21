@@ -128,8 +128,29 @@ public class LeftNav {
 
     //----------------------------ÜMMÜHAN-----------------------------------
 
- @FindBy(id="account")
-    public WebElement account;
+    @FindBy(xpath = "//a[text()='Open New Account']")
+    public WebElement openNewAccount;
+
+    @FindBy(id = "type")
+    public WebElement selectMenuAccountType;
+
+    @FindBy(id = "fromAccountId")
+    public WebElement selectMenuAccountNumber;
+
+    @FindBy(xpath = "//input[@class='button']")
+    public WebElement openNewAccountButton;
+
+    @FindBy(xpath = "//div[@id='openAccountResult']//h1")
+    public WebElement accountOpenedText;
+
+    @FindBy(id = "newAccountId")
+    public WebElement accountNumberClick;
+
+    @FindBy(xpath = "//div[@id='accountDetails']/table/tbody/tr")
+    public List<WebElement> accountDetails;
+
+    @FindBy(xpath = "//*[text()='Funds Transfer Received']")
+    public WebElement fundsTransferClick;
 
 
 
