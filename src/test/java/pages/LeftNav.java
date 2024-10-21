@@ -128,7 +128,8 @@ public class LeftNav {
 
     //----------------------------ÜMMÜHAN-----------------------------------
 
-
+ @FindBy(id="account")
+    public WebElement account;
 
 
 
