@@ -9,7 +9,9 @@ import java.util.List;
 
 public class LeftNav {
 
-    public LeftNav() {PageFactory.initElements(GWD.getDriver(),this);}
+    public LeftNav() {
+        PageFactory.initElements(GWD.getDriver(), this);
+    }
 
     //-----------------------------MERVE---------------------------------
 
@@ -38,7 +40,7 @@ public class LeftNav {
     public WebElement accountNumberBox;
 
     @FindBy(name = "verifyAccount")
-    public  WebElement verifyAccountBox;
+    public WebElement verifyAccountBox;
 
     @FindBy(name = "amount")
     public WebElement amountBBox;
@@ -60,49 +62,6 @@ public class LeftNav {
 
     @FindBy(css = "p>[id='fromAccountId']")
     public WebElement accountControlText;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -154,6 +113,26 @@ public class LeftNav {
 
     @FindBy(xpath = "//select[@id='fromAccountId']/option")
     public WebElement selectAccountNumber;
+
+
+    public WebElement getWebElement(String stringElement) {
+
+        switch (stringElement.trim()) {
+            case "openNewAccount":
+                return this.openNewAccount;
+            case "openNewAccountButton":
+                return this.openNewAccountButton;
+        }
+          return null;
+    }
+
+
+
+
+
+
+
+
 
 
 
