@@ -15,7 +15,7 @@ public class GWD {
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 
-        if (driver == null) //hiç oluşturulmamış ise
+        if (driver == null)
         {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
