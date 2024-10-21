@@ -13,6 +13,8 @@ Feature: Open a Bank Account Functionality
 
     And The user selects the "<accountType>" type from the drop-down menu
 
+    And The user selects the "<index>" type from the drop-down menu
+
     And The user receives a warning that the new bank account should have a minimum balance
 
     And The user selects the accountNumber from the Drop-Down menu
@@ -23,6 +25,6 @@ Feature: Open a Bank Account Functionality
     Then The user confirms the successful creation of the new bank account
 
     Examples:
-      | accountType      |
-      | Checking Account |
-      | Savings Account  |
+      | accountType      | index |
+      | Checking Account |   0   |
+      | Savings Account  |   1   |
