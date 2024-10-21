@@ -128,6 +128,18 @@ public class LeftNav {
 
     //----------------------------ÜMMÜHAN-----------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
     @FindBy(xpath = "//a[text()='Open New Account']")
     public WebElement openNewAccount;
 
@@ -151,6 +163,9 @@ public class LeftNav {
 
     @FindBy(xpath = "//*[text()='Funds Transfer Received']")
     public WebElement fundsTransferClick;
+
+    @FindBy(xpath = "//select[@id='fromAccountId']/option")
+    public WebElement selectAccountNumber;
 
 
 
