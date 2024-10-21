@@ -30,7 +30,7 @@ public class Login {
         login.myClick(login.loginBtn);
     }
 
-    @Then("message should be displayed")
+    @Then("Error message should be displayed")
     public void messageShouldBeDisplayed() {
         login.verifyContainsText(login.errorMessage,"not be verified.");
     }

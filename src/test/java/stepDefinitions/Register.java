@@ -26,7 +26,7 @@ public class Register {
         login.myClick(login.registerBtn);
     }
 
-    @And("Fills the areas given in the customer data")
+    @And("Fill the areas given in the customer data")
     public void fillsTheAreasGivenInTheCustomerData() {
 
         login.mySendKeys(login.firstName, faker.name().firstName());
