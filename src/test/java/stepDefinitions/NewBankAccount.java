@@ -15,9 +15,8 @@ public class NewBankAccount {
         
     }
 
-    @And("The user selects the account type from the drop-down menu")
-    public void theUserSelectsTheAccountTypeFromTheDropDownMenu() {
-        
+    @And("The user selects the {string} type from the drop-down menu")
+    public void theUserSelectsTheTypeFromTheDropDownMenu(String arg0) {
     }
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
@@ -25,12 +24,12 @@ public class NewBankAccount {
         
     }
 
-    @And("The user selects the account from the Drop-Down menu")
-    public void theUserSelectsTheAccountFromTheDropDownMenu() {
-        
+    @And("The user selects the {string} from the Drop-Down menu")
+    public void theUserSelectsTheFromTheDropDownMenu(String arg0) {
     }
 
     @Then("The user confirms the successful creation of the new bank account")
     public void theUserConfirmsTheSuccessfulCreationOfTheNewBankAccount() {
     }
+
 }
