@@ -1,12 +1,9 @@
 package pages;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
-
-import java.security.PublicKey;
 
 public class Login extends ParentPage {
     public Login() {
