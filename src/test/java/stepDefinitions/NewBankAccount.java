@@ -15,6 +15,7 @@ public class NewBankAccount {
 
     @And("The user selects the {string} type from the drop-down menu")
     public void theUserSelectsTheTypeFromTheDropDownMenu(String arg0) {
+
     }
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
