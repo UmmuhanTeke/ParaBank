@@ -128,18 +128,6 @@ public class LeftNav {
 
     //----------------------------ÜMMÜHAN-----------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//a[text()='Open New Account']")
     public WebElement openNewAccount;
 
