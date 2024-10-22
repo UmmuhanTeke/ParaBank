@@ -5,17 +5,19 @@ Feature: Bill Pay Functionality
     When Enter username and password and click login button
     Then User should login successfully
 
-  Scenario Outline: Enter payee information to Bill Pay form
-    When Click on the Bill Pay Button
-    And User sending the name as "<payeeName>"
-    And The user fills in the Billing Information in the customer data
-    Then Success message should be displayed
+  Scenario Outline: Enter Payee information to Bill Pay form
+    When The user clicks on the Bill Pay Button
+    And  The user types the name as "<payeeName>" in Payee Name box
+    When The user fills in the Billing Information in the customer data
+    Then The user displays the successful pay message
+    When The user navigates to the Accounts Overview
+    Then The user verifies the Transaction ID from Account Activity
 
     Examples:
-      | payeeName                 |
-      | EnerjiSa Electricity Bill |
-      | Iski Water Bill           |
-      | IGDAS Natural Gas         |
+      | payeeName        |
+      | Electricity Bill |
+      | Water Bill       |
+      | Natural Gas Bill |
 
 
 
