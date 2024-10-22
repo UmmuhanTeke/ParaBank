@@ -52,7 +52,7 @@ public class Login extends ParentPage {
     @FindBy(id = "customer.username.errors")
     public WebElement usernameError;
 
-    @FindBy(css = "[class='title']")
+    @FindBy(css = "[id='rightPanel']>h1")
     public WebElement registerControl;
 
     @FindBy(css = "[class='login']>input[name='username']")
