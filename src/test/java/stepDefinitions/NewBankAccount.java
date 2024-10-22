@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import pages.LeftNav;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class NewBankAccount {
     @When("Click on the Element in Content")
     public void clickOnTheElementInContent() {
         ln.myClick(ln.openNewAccount);
+        Assert.assertTrue(ln.openNewAccount.getText().contains("Open New"));
     }
 
     @And("The user is directed to the bank account creating page")
