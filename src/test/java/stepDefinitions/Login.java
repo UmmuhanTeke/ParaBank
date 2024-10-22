@@ -7,7 +7,7 @@ import utilities.ConfigReader;
 public class Login {
     pages.Login login = new pages.Login();
 
-    @When("Enter username and password and click login button")
+    @When("The user types username and password and clicks on the login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
         login.mySendKeys(login.loginUsername, ConfigReader.getProperty("username"));
 
@@ -16,12 +16,12 @@ public class Login {
         login.myClick(login.loginBtn);
     }
 
-    @Then("User should login successfully")
+    @Then("The user should login successfully")
     public void userShouldLoginSuccessfully() {
         login.verifyContainsText(login.loginControl ,"Account Services");
     }
 
-    @When("Enter {string} and {string} and click login button")
+    @When("The user types {string} and {string} and clicks on the login button")
     public void enterAndAndClickLoginButton(String invalidUsername, String invalidPassword) {
         login.mySendKeys(login.loginUsername,invalidUsername);
 

@@ -1,14 +1,14 @@
 Feature: Login Functionality
 
   Background:
-    Given Navigate to the ParaBank website
+    Given The user navigates to the ParaBank website
 
   Scenario: Login with valid username and password
-    When  Enter username and password and click login button
-    Then  User should login successfully
+    When  The user types username and password and clicks on the login button
+    Then  The user should login successfully
 
   Scenario Outline: Login With invalid username and password
-    When  Enter "<invalidUsername>" and "<invalidPassword>" and click login button
+    When  The user types "<invalidUsername>" and "<invalidPassword>" and clicks on the login button
     Then  Error message should be displayed
     Examples:
       | invalidUsername | invalidPassword   |
