@@ -18,49 +18,53 @@ public class Register {
 
     @Given("Navigate to the ParaBank website")
     public void navigateToTheParaBankWebsite() {
-        GWD.getDriver().get("https://parabank.parasoft.com/");
+        GWD.getDriver().get("https://parabank.parasoft.com/parabank/index.htm");
     }
 
     @When("Click on the Register button")
     public void clickOnTheRegisterButton() {
-        login.myClick(login.registerBtn);
+
     }
 
     @And("Fill the areas given in the customer data")
     public void fillsTheAreasGivenInTheCustomerData() {
+        do {
+            login.myClick(login.registerBtn);
 
-        login.mySendKeys(login.firstName, faker.name().firstName());
+            login.mySendKeys(login.firstName, faker.name().firstName());
 
-        login.mySendKeys(login.lastName, faker.name().lastName());
+            login.mySendKeys(login.lastName, faker.name().lastName());
 
-        login.mySendKeys(login.address, faker.address().fullAddress());
+            login.mySendKeys(login.address, faker.address().fullAddress());
 
-        login.mySendKeys(login.city, faker.address().city());
+            login.mySendKeys(login.city, faker.address().city());
 
-        login.mySendKeys(login.state, faker.address().state());
+            login.mySendKeys(login.state, faker.address().state());
 
-        login.mySendKeys(login.zipCode, faker.address().zipCode());
+            login.mySendKeys(login.zipCode, faker.address().zipCode());
 
-        login.mySendKeys(login.phoneNumber, faker.phoneNumber().cellPhone());
+            login.mySendKeys(login.phoneNumber, faker.phoneNumber().cellPhone());
 
-        login.mySendKeys(login.ssn, faker.idNumber().ssnValid());
+            login.mySendKeys(login.ssn, faker.idNumber().ssnValid());
 
-        ConfigReader.updateProperty("username");
+            ConfigReader.updateProperty("username");
 
-        login.mySendKeys(login.registerUsername, ConfigReader.getProperty("username"));
+            login.mySendKeys(login.registerUsername, ConfigReader.getProperty("username"));
 
-        ConfigReader.updateProperty("password");
+            ConfigReader.updateProperty("password");
 
-        login.mySendKeys(login.registerPassword, ConfigReader.getProperty("password"));
+            login.mySendKeys(login.registerPassword, ConfigReader.getProperty("password"));
 
-        login.mySendKeys(login.confirmPassword, ConfigReader.getProperty("password"));
+            login.mySendKeys(login.confirmPassword, ConfigReader.getProperty("password"));
 
+            login.myClick(login.registerSubmitBtn);
+
+            login.wait(3);
+        } while (login.usernameError.getText().contains("already"));
     }
 
     @Then("Click on the Register Submit Button and success message should be displayed")
     public void clickOnTheRegisterSubmitButton() {
-        login.myClick(login.registerSubmitBtn);
-
         login.verifyContainsText(login.registerControl, ConfigReader.getProperty("username"));
     }
 }
