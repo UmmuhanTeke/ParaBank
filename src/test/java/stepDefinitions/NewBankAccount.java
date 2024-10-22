@@ -4,6 +4,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
 import pages.LeftNav;
 
 import java.util.List;
@@ -26,24 +27,37 @@ public class NewBankAccount {
     }
 
     @And("The user selects the {string} type from the drop-down menu")
-    public void theUserSelectsTheTypeFromTheDropDownMenu(String arg0) {
-
+    public void theUserSelectsTheTypeFromTheDropDownMenu(String accountType) {
+        ln.selectByText(ln.selectMenuAccountType, accountType);
     }
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
     public void theUserReceivesAWarningThatTheNewBankAccountShouldHaveAMinimumBalance() {
-
+        ln.verifyContainsText(ln.minBalanceText, "minimum of $200.00 must be");
+        System.out.println("ln.minBalanceText.getText() = " + ln.minBalanceText.getText());
     }
 
     @And("The user selects the accountNumber from the Drop-Down menu")
     public void theUserSelectsTheAccountNumberFromTheDropDownMenu() {
+        List<WebElement> options = ln.selectAccountNumber;
+        if (!options.isEmpty()) {
+            options.get(0).click();
+        } else {
+            System.out.println("No account number");
+        }
     }
 
     @And("Click on the Element in Button")
-    public void clickOnTheElementInButton() {
+    public void clickOnTheElementInButton(DataTable newAccountButton) {
+        List<String> button=newAccountButton.asList();
+
+        for (int i = 0; i < button.size(); i++) {
+            ln.myClick(ln.getWebElement(button.get(i)));
+        }
     }
 
     @Then("The user confirms the successful creation of the new bank account")
     public void theUserConfirmsTheSuccessfulCreationOfTheNewBankAccount() {
+        ln.verifyContainsText(ln.accountOpenedText, "your account is now open");
     }
 }
