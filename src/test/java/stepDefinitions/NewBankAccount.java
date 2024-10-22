@@ -28,8 +28,7 @@ public class NewBankAccount {
 
     @And("The user selects the {string} type from the drop-down menu")
     public void theUserSelectsTheTypeFromTheDropDownMenu(String accountType) {
-        ln.selectMenuAccountType.click();
-        ln.selectByText(ln.selectMenuAccountType, accountType);
+        ln.selectByValue(ln.selectMenu, accountType);
     }
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
@@ -50,6 +49,7 @@ public class NewBankAccount {
 
     @Then("The user confirms the successful creation of the new bank account")
     public void theUserConfirmsTheSuccessfulCreationOfTheNewBankAccount() {
+        System.out.println("abc");
         ln.verifyContainsText(ln.accountOpenedText, "account is now open");
     }
 }
