@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,12 +12,8 @@ public class NewBankAccount {
     LeftNav ln=new LeftNav();
 
     @When("Click on the Element in Content")
-    public void clickOnTheElementInContent(DataTable accountButton) {
-        List<String> buttons=accountButton.asList();
-
-        for (int i = 0; i < buttons.size(); i++) {
-            ln.myClick(ln.getWebElement(buttons.get(i)));
-        }
+    public void clickOnTheElementInContent() {
+        ln.myClick(ln.openNewAccount);
     }
 
     @And("The user is directed to the bank account creating page")
@@ -33,7 +28,7 @@ public class NewBankAccount {
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
     public void theUserReceivesAWarningThatTheNewBankAccountShouldHaveAMinimumBalance() {
-        ln.verifyContainsText(ln.minBalanceText, "minimum of $200.00 must be");
+        ln.verifyContainsText(ln.minBalanceText, "$200.00");
         System.out.println("ln.minBalanceText.getText() = " + ln.minBalanceText.getText());
     }
 
@@ -48,12 +43,8 @@ public class NewBankAccount {
     }
 
     @And("Click on the Element in Button")
-    public void clickOnTheElementInButton(DataTable newAccountButton) {
-        List<String> button=newAccountButton.asList();
-
-        for (int i = 0; i < button.size(); i++) {
-            ln.myClick(ln.getWebElement(button.get(i)));
-        }
+    public void clickOnTheElementInButton() {
+        ln.myClick(ln.openNewAccountButton);
     }
 
     @Then("The user confirms the successful creation of the new bank account")
