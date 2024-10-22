@@ -14,6 +14,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class ParentPage {
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(ConfigReader.getIntProperty("explicit.wait")));
@@ -45,7 +46,12 @@ public class ParentPage {
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
         for (WebElement element : elements) {
             Select menu = new Select(element);
-            menu.selectByValue(value);
+            try {
+                menu.selectByValue(value);
+                break;
+            } catch (NoSuchElementException e) {
+
+            }
         }
     }
 
