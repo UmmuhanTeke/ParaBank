@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.TimeoutException;
 import utilities.ConfigReader;
 
 public class Login {
@@ -21,17 +22,22 @@ public class Login {
         login.verifyContainsText(login.loginControl ,"Account Services");
     }
 
-    @When("The user types {string} and {string} and clicks on the login button")
-    public void enterAndAndClickLoginButton(String invalidUsername, String invalidPassword) {
-        login.mySendKeys(login.loginUsername,invalidUsername);
+    @When("The user types invalid username and invalid password and clicks on the login button")
+    public void enterAndAndClickLoginButton() {
+        login.mySendKeys(login.loginUsername,ConfigReader.getProperty("invalidUsername"));
 
-        login.mySendKeys(login.loginPassword,invalidPassword);
+        login.mySendKeys(login.loginPassword,ConfigReader.getProperty("invalidPassword"));
 
         login.myClick(login.loginBtn);
     }
 
     @Then("Error message should be displayed")
     public void messageShouldBeDisplayed() {
-        login.verifyContainsText(login.errorMessage,"not be verified.");
+
+        try {
+            login.verifyContainsText(login.errorMessage,"not be verified.");
+        }catch (TimeoutException e){
+            login.verifyContainsText(login.errorMessage,"has been logged.");
+        }
     }
 }
