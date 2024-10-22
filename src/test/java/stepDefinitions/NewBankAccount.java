@@ -1,10 +1,10 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import pages.LeftNav;
 
 import java.util.List;
@@ -13,9 +13,12 @@ public class NewBankAccount {
     LeftNav ln = new LeftNav();
 
     @When("Click on the Element in Content")
-    public void clickOnTheElementInContent() {
-        ln.myClick(ln.openNewAccount);
-        Assert.assertTrue(ln.openNewAccount.getText().contains("Open New"));
+    public void clickOnTheElementInContent(DataTable buttons) {
+        List<String> links = buttons.asList();
+
+        for (int i = 0; i < links.size(); i++) {
+            ln.myClick(ln.getWebElement(links.get(i)));
+        }
     }
 
     @And("The user is directed to the bank account creating page")
@@ -25,7 +28,8 @@ public class NewBankAccount {
 
     @And("The user selects the {string} type from the drop-down menu")
     public void theUserSelectsTheTypeFromTheDropDownMenu(String accountType) {
-        ln.selectByValue(ln.selectMenuAccountType, accountType );
+        ln.selectMenuAccountType.click();
+        ln.selectByText(ln.selectMenuAccountType, accountType);
     }
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
@@ -42,11 +46,6 @@ public class NewBankAccount {
         } else {
             System.out.println("No account number");
         }
-    }
-
-    @And("Click on the Element in Button")
-    public void clickOnTheElementInButton() {
-        ln.myClick(ln.openNewAccountButton);
     }
 
     @Then("The user confirms the successful creation of the new bank account")
