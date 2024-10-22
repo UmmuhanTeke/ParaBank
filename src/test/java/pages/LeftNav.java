@@ -97,6 +97,58 @@ public class LeftNav extends ParentPage{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //----------------------------ÜMMÜHAN-----------------------------------
 
     @FindBy(xpath = "//a[text()='Open New Account']")
@@ -107,6 +159,9 @@ public class LeftNav extends ParentPage{
 
     @FindBy(id = "type")
     public WebElement selectMenuAccountType;
+
+    @FindBy(xpath = "(//div[@id='openAccountForm']/form/p/b)[2]")
+    public WebElement minBalanceText;
 
     @FindBy(id = "fromAccountId")
     public WebElement selectMenuAccountNumber;
@@ -127,7 +182,7 @@ public class LeftNav extends ParentPage{
     public WebElement fundsTransferClick;
 
     @FindBy(xpath = "//select[@id='fromAccountId']/option")
-    public WebElement selectAccountNumber;
+    public List<WebElement> selectAccountNumber;
 
 
     public WebElement getWebElement(String stringElement) {
@@ -137,11 +192,28 @@ public class LeftNav extends ParentPage{
                 return this.openNewAccount;
             case "newAccountPageControl":
                 return this.newAccountPageControl;
+            case "selectMenuAccountType":
+                return this.selectMenuAccountType;
+            case "minBalanceText":
+                return this.minBalanceText;
+            case "selectMenuAccountNumber":
+                return this.selectMenuAccountNumber;
             case "openNewAccountButton":
                 return this.openNewAccountButton;
+            case "accountOpenedText":
+                return this.accountOpenedText;
+            case "accountNumberClick":
+                return this.accountNumberClick;
+            case "fundsTransferClick":
+                return this.fundsTransferClick;
         }
           return null;
     }
+
+
+
+
+
 
 
 
