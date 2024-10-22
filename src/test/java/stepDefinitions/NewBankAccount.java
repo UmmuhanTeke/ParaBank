@@ -1,16 +1,29 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.LeftNav;
+import pages.ParentPage;
+
+import java.util.List;
 
 public class NewBankAccount {
+    LeftNav ln=new LeftNav();
+
     @When("Click on the Element in Content")
-    public void clickOnTheElementInContent() {
+    public void clickOnTheElementInContent(DataTable accountButton) {
+        List<String> buttons=accountButton.asList();
+
+        for (int i = 0; i < buttons.size(); i++) {
+            ln.myClick(ln.getWebElement(buttons.get(i)));
+        }
     }
 
     @And("The user is directed to the bank account creating page")
     public void theUserIsDirectedToTheBankAccountCreatingPage() {
+     ln.verifyContainsText(ln.newAccountPageControl, "Open New Account");
     }
 
     @And("The user selects the {string} type from the drop-down menu")

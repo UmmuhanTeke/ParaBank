@@ -85,10 +85,25 @@ public class LeftNav extends ParentPage{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     //----------------------------ÜMMÜHAN-----------------------------------
 
     @FindBy(xpath = "//a[text()='Open New Account']")
     public WebElement openNewAccount;
+
+    @FindBy(xpath = "(//*[text()='Open New Account'])[2]")
+    public WebElement newAccountPageControl;
 
     @FindBy(id = "type")
     public WebElement selectMenuAccountType;
@@ -120,6 +135,8 @@ public class LeftNav extends ParentPage{
         switch (stringElement.trim()) {
             case "openNewAccount":
                 return this.openNewAccount;
+            case "newAccountPageControl":
+                return this.newAccountPageControl;
             case "openNewAccountButton":
                 return this.openNewAccountButton;
         }
