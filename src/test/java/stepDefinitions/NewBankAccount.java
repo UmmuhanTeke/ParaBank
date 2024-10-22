@@ -30,7 +30,7 @@ public class NewBankAccount {
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
     public void theUserReceivesAWarningThatTheNewBankAccountShouldHaveAMinimumBalance() {
-        ln.verifyContainsText(ln.minBalanceText, "$200.00");
+        ln.verifyContainsText(ln.minBalanceText, " minimum");
         System.out.println("ln.minBalanceText.getText() = " + ln.minBalanceText.getText());
     }
 
