@@ -17,6 +17,6 @@ Feature: Open a Bank Account Functionality
     Then The user confirms the successful creation of the new bank account
 
     Examples:
-      | accountType      |
-      | Checking Account |
-      | Savings Account  |
+      | accountType |
+      | 0           |
+      | 1           |
