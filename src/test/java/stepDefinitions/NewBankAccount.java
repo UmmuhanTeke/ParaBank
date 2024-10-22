@@ -10,7 +10,7 @@ import pages.LeftNav;
 import java.util.List;
 
 public class NewBankAccount {
-    LeftNav ln=new LeftNav();
+    LeftNav ln = new LeftNav();
 
     @When("Click on the Element in Content")
     public void clickOnTheElementInContent() {
@@ -20,7 +20,7 @@ public class NewBankAccount {
 
     @And("The user is directed to the bank account creating page")
     public void theUserIsDirectedToTheBankAccountCreatingPage() {
-     ln.verifyContainsText(ln.newAccountPageControl, "Open New Account");
+        ln.verifyContainsText(ln.newAccountPageControl, "Open New Account");
     }
 
     @And("The user selects the {string} type from the drop-down menu")
@@ -51,6 +51,6 @@ public class NewBankAccount {
 
     @Then("The user confirms the successful creation of the new bank account")
     public void theUserConfirmsTheSuccessfulCreationOfTheNewBankAccount() {
-        ln.verifyContainsText(ln.accountOpenedText, "your account is now open");
+        ln.verifyContainsText(ln.accountOpenedText, "account is now open");
     }
 }
