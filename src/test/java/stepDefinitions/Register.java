@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.NoSuchElementException;
 import pages.Login;
 import utilities.ConfigReader;
 import utilities.GWD;
@@ -16,17 +17,12 @@ public class Register {
     Login login = new Login();
     Faker faker = new Faker(new Locale("en-US"));
 
-    @Given("Navigate to the ParaBank website")
+    @Given("The user navigates to the ParaBank website")
     public void navigateToTheParaBankWebsite() {
         GWD.getDriver().get("https://parabank.parasoft.com/parabank/index.htm");
     }
 
-    @When("Click on the Register button")
-    public void clickOnTheRegisterButton() {
-
-    }
-
-    @And("Fill the areas given in the customer data")
+    @When("The user clicks on the register button and fills the areas given in the customer data and clicks on the submit button")
     public void fillsTheAreasGivenInTheCustomerData() {
         do {
             login.myClick(login.registerBtn);
@@ -60,10 +56,18 @@ public class Register {
             login.myClick(login.registerSubmitBtn);
 
             login.wait(3);
-        } while (login.usernameError.getText().contains("already"));
+        } while (found());
     }
 
-    @Then("Click on the Register Submit Button and success message should be displayed")
+    public boolean found(){
+        try {
+          return  login.usernameError.getText().contains("already");
+        }catch (NoSuchElementException e ){
+            return false;
+        }
+    }
+
+    @Then("Success message should be displayed")
     public void clickOnTheRegisterSubmitButton() {
         login.verifyContainsText(login.registerControl, ConfigReader.getProperty("username"));
     }
