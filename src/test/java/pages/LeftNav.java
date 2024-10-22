@@ -185,31 +185,6 @@ public class LeftNav extends ParentPage{
     public List<WebElement> selectAccountNumber;
 
 
-    public WebElement getWebElement(String stringElement) {
-
-        switch (stringElement.trim()) {
-            case "openNewAccount":
-                return this.openNewAccount;
-            case "newAccountPageControl":
-                return this.newAccountPageControl;
-            case "selectMenuAccountType":
-                return this.selectMenuAccountType;
-            case "minBalanceText":
-                return this.minBalanceText;
-            case "selectMenuAccountNumber":
-                return this.selectMenuAccountNumber;
-            case "openNewAccountButton":
-                return this.openNewAccountButton;
-            case "accountOpenedText":
-                return this.accountOpenedText;
-            case "accountNumberClick":
-                return this.accountNumberClick;
-            case "fundsTransferClick":
-                return this.fundsTransferClick;
-        }
-          return null;
-    }
-
 
 
 
