@@ -57,7 +57,7 @@ public class Register {
 
     public boolean found(){
         try {
-          return  login.usernameError.getText().contains("already");
+          return login.usernameError.getText().contains("already");
         }catch (NoSuchElementException e ){
             return false;
         }
