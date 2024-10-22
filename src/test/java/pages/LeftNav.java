@@ -174,8 +174,11 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "(//*[text()='Open New Account'])[2]")
     public WebElement newAccountPageControl;
 
-    @FindBy(xpath = " //select[@id='type']/option")
-    public List<WebElement> selectMenuAccountType;
+    @FindBy(xpath = "//select[@id='type']")
+    public WebElement selectMenuAccountType;
+
+    @FindBy(xpath = "//select[@id='type']/option")
+    public List<WebElement> selectMenuElements;
 
     @FindBy(xpath = "(//div[@id='openAccountForm']/form/p/b)[2]")
     public WebElement minBalanceText;
@@ -197,6 +200,14 @@ public class LeftNav extends ParentPage{
 
     @FindBy(xpath = "//select[@id='fromAccountId']/option")
     public List<WebElement> selectAccountNumber;
+
+    public WebElement getWebElement(String strWebElement){
+        switch (strWebElement){
+            case "openNewAccount": return this.openNewAccount;
+            case "openNewAccountButton": return this.openNewAccountButton ;
+        }
+        return null;
+    }
 
 
 

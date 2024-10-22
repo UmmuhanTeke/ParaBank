@@ -42,17 +42,10 @@ public class ParentPage {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
-    public void selectByValue(List<WebElement> elements, String value) {
-        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
-        for (WebElement element : elements) {
-            Select menu = new Select(element);
-            try {
-                menu.selectByValue(value);
-                break;
-            } catch (NoSuchElementException e) {
-
-            }
-        }
+    public void selectByValue(WebElement element, String value) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        Select menu = new Select(element);
+        menu.selectByValue(value);
     }
 
     public void selectByIndex(WebElement element, String index) {
