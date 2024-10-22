@@ -7,7 +7,7 @@ import utilities.GWD;
 
 import java.util.List;
 
-public class LeftNav {
+public class LeftNav extends ParentPage{
 
     public LeftNav() {
         PageFactory.initElements(GWD.getDriver(), this);
