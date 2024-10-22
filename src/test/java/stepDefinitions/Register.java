@@ -1,10 +1,7 @@
 package stepDefinitions;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.NoSuchElementException;
 import pages.Login;
 import utilities.ConfigReader;
@@ -55,7 +52,6 @@ public class Register {
 
             login.myClick(login.registerSubmitBtn);
 
-            login.wait(3);
         } while (found());
     }
 
