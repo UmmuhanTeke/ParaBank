@@ -180,9 +180,6 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "(//div[@id='openAccountForm']/form/p/b)[2]")
     public WebElement minBalanceText;
 
-    @FindBy(id = "fromAccountId")
-    public WebElement selectMenuAccountNumber;
-
     @FindBy(xpath = "//input[@class='button']")
     public WebElement openNewAccountButton;
 
