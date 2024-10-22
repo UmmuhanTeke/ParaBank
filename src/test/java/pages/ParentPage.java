@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.support.ui.Select;
 import utilities.ConfigReader;
 import utilities.GWD;
 import org.openqa.selenium.Keys;
@@ -37,6 +38,18 @@ public class ParentPage {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+    }
+
+    public void selectByIndex(WebElement element, int index) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        Select menu = new Select(element);
+        menu.selectByIndex(index);
+    }
+
+    public void selectByText(WebElement element, String text) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        Select select = new Select(element);
+        select.selectByVisibleText(text);
     }
 
     public void jsClick(WebElement element) {
