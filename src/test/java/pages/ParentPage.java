@@ -41,10 +41,10 @@ public class ParentPage {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
-    public void selectByIndex(WebElement element, int index) {
+    public void selectByValue(WebElement element, String value) {
         wait.until(ExpectedConditions.visibilityOf(element));
         Select menu = new Select(element);
-        menu.selectByIndex(index);
+        menu.selectByValue(value);
     }
 
     public void selectByText(WebElement element, String text) {

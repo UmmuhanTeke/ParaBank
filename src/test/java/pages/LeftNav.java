@@ -157,7 +157,7 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "(//*[text()='Open New Account'])[2]")
     public WebElement newAccountPageControl;
 
-    @FindBy(id = "type")
+    @FindBy(xpath = " //select[@id='type']/option")
     public WebElement selectMenuAccountType;
 
     @FindBy(xpath = "(//div[@id='openAccountForm']/form/p/b)[2]")
