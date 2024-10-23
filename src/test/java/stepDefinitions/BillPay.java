@@ -9,7 +9,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import pages.LeftNav;
 import utilities.GWD;
-
 import java.util.List;
 import java.util.Locale;
 
