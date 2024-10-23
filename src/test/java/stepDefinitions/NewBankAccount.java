@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import pages.LeftNav;
 
 import java.util.List;
@@ -60,10 +61,9 @@ public class NewBankAccount {
 
     @Then("The user verifies their information in the account details")
     public void theUserVerifiesTheirInformationInTheAccountDetails() {
-        System.out.println(ln.accountNumberClick.getText());
-        // ln.verifyContainsText(ln.accountDetailsNumber, ln.accountNumberClick.getText());
-
-//        if (ln.accountDetailsNumber.getText().equals(ln.accountNumberClick.getText())){
-//            System.out.println("Hesap numaraları eşleşti");}
+        System.out.println(ln.accountDetailsNumber.getText());
+        System.out.println(ln.accountDetailsNumber.getAttribute("innerHTML").equalsIgnoreCase(ln.accountNumberClick.getText()));
+        Assert.assertTrue(ln.accountDetailsNumber.getAttribute("innerHTML").equalsIgnoreCase(ln.accountNumberClick.getText()));
+        ln.verifyContainsText(ln.accountDetailsNumber, ln.accountNumberClick.getText());
     }
 }
