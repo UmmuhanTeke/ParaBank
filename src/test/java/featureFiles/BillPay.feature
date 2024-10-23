@@ -5,7 +5,7 @@ Feature: Bill Pay Functionality
     When The user types username and password and clicks on the login button
     Then The user should login successfully
 
-  Scenario: Electric Bill Payment
+  Scenario: Bill Pay for Electricity, Water and Natural Gas
     When The user clicks on the Bill Pay Button
     And  The user types the name in Payee Name box
       | Electricity Bill |
