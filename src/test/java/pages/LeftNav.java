@@ -64,13 +64,22 @@ public class LeftNav extends ParentPage{
     public WebElement accountsOverviewButton;
 
     @FindBy(xpath = "//table[@id='accountTable']//td/a")
-    public List<WebElement> accountList;
+    public WebElement accountButton;
 
-    @FindBy(xpath = "//table[@id='transactionTable']//a")
+    @FindBy(xpath = "//table[@id='transactionTable']//td/a")
     public List<WebElement>transactionList;
 
-    @FindBy (xpath = "//h1[text()='Transaction Details']")
-    public WebElement transactionDetailsText;
+    @FindBy (xpath = "(//div[@id='rightPanel']//td)[6]")
+    public WebElement controlBillPay;
+
+    @FindBy(linkText = "Bill Payment to Electricity Bill")
+    public WebElement billPayeeElectric;
+
+    @FindBy(linkText = "Bill Payment to Water Bill")
+    public  WebElement billPayeeWater;
+
+    @FindBy(linkText = "Bill Payment to Natural Gas Bill")
+    public WebElement billPayeeNatGas;
 
 
 
@@ -204,6 +213,7 @@ public class LeftNav extends ParentPage{
             case "openNewAccountButton": return this.openNewAccountButton ;
             case "selectSavings": return this.selectSavings;
             case "selectChecking": return this.selectChecking;
+            case "payeeNameBox":return this.payeeNameBox;
         }
         return null;
     }
