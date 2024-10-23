@@ -1,13 +1,23 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.LeftNav;
+
+import java.util.List;
 
 public class ContactUpdateInfo {
-    @When("The user clicks on the Update Contact Info")
-    public void theUserClicksOnTheUpdateContactInfo() {
+    LeftNav ln = new LeftNav();
 
+    @When("The user clicks on the Update Contact Info")
+    public void theUserClicksOnTheUpdateContactInfo(DataTable buttons) {
+        List<String> links = buttons.asList();
+
+        for (int i = 0; i < links.size(); i++) {
+            ln.myClick(ln.getWebElement(links.get(i)));
+        }
     }
 
     @Then("The user accesses the update profile page")

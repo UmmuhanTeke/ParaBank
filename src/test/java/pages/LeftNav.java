@@ -192,11 +192,41 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[4]")
     public WebElement accountName;
 
-    @FindBy(xpath = "//*[text()='Funds Transfer Received']")
-    public WebElement fundsTransferClick;
-
     @FindBy(xpath = "//select[@id='fromAccountId']/option")
     public List<WebElement> selectAccountNumber;
+
+    @FindBy(xpath = "//*[text()='Update Contact Info']")
+    public WebElement updateContactInfoButton;
+
+    @FindBy(xpath = "//div[@id='updateProfileForm']/h1")
+    public WebElement updateProfileControl;
+
+    @FindBy(xpath = "//table[@class='form2']/tbody/tr")
+    public List<WebElement> updateProfileDetails;
+
+    @FindBy(xpath = "//*[text()='Log Out']")
+    public WebElement logOutButton;
+
+    @FindBy(xpath = "(//tr/td)[5]/input")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//span[@id='lastName-error']")
+    public WebElement lastNameError;
+
+    @FindBy(xpath = "(//tr/td)[8]/input")
+    public WebElement address;
+
+    @FindBy(xpath = "//span[@id='street-error']")
+    public WebElement addressError;
+
+    @FindBy(xpath = "(//tr/td)[11]/input")
+    public WebElement city;
+
+    @FindBy(xpath = "//span[@id='city-error']")
+    public WebElement cityError;
+
+    @FindBy(xpath = "//input[@type='button']")
+    public WebElement updateProfileButton;
 
     public WebElement getWebElement(String strWebElement){
         switch (strWebElement){
@@ -204,6 +234,8 @@ public class LeftNav extends ParentPage{
             case "openNewAccountButton": return this.openNewAccountButton ;
             case "selectSavings": return this.selectSavings;
             case "selectChecking": return this.selectChecking;
+            case "updateContactInfoButton": return this.updateContactInfoButton;
+            case "updateProfileButton": return this.updateProfileButton;
         }
         return null;
     }
