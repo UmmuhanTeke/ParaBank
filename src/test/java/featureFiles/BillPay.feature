@@ -1,9 +1,9 @@
 Feature: Bill Pay Functionality
 
   Background:
-    Given Navigate to the ParaBank website
-    When Enter username and password and click login button
-    Then User should login successfully
+    Given The user navigates to the ParaBank website
+    When The user types username and password and clicks on the login button
+    Then The user should login successfully
 
   Scenario Outline: Enter Payee information to Bill Pay form
     When The user clicks on the Bill Pay Button
