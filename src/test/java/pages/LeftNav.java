@@ -226,8 +226,8 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//a[@id='newAccountId']")
     public WebElement accountNumberClick;
 
-    @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[2]")
-    public WebElement accountDetailsNumber;
+    @FindBy(xpath = "(//div[@id='accountDetails']//tr/td)[4]")
+    public WebElement accountType;
 
     @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[4]")
     public WebElement accountName;
@@ -243,6 +243,9 @@ public class LeftNav extends ParentPage{
 
     @FindBy(xpath = "//div[@id='updateProfileForm']/h1")
     public WebElement updateProfileControl;
+
+    @FindBy(css = "[class='smallText']")
+    public WebElement welcomeControl;
 
     @FindBy(xpath = "//table[@class='form2']/tbody/tr")
     public List<WebElement> updateProfileDetails;
@@ -267,6 +270,9 @@ public class LeftNav extends ParentPage{
 
     @FindBy(xpath = "//span[@id='city-error']")
     public WebElement cityError;
+
+    @FindBy(css = "input[id='customer.firstName']")
+    public WebElement firstName;
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement username;
