@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.LeftNav;
 
@@ -45,10 +46,10 @@ public class BillPay {
 
     @Then("The user displays the successful pay message")
     public void theUserDisplaysTheSuccessfulPayMessage() {
-        if (element.payingControlText.isDisplayed()) {
-            System.out.println(element.payingControlText.getAttribute("innerHTML").contains(" was successful"));
-            Assert.assertTrue(element.payingControlText.getAttribute("innerHTML").contains(" was successful"));
-        }
+        element.wait.until(ExpectedConditions.visibilityOf(element.billPaymentCompleteText));
+        System.out.println("text:"+element.billPaymentCompleteText.getText());
+        Assert.assertTrue(element.billPaymentCompleteText.getText().contains("Bill Payment Complete"));
+        Assert.assertTrue(element.billPaymentCompleteText.isDisplayed());
     }
 
     @When("The user navigates to the Accounts Overview")

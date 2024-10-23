@@ -57,17 +57,14 @@ public class LeftNav extends ParentPage{
     @FindBy(css = "input[value='Send Payment']")
     public WebElement sendPaymentButton;
 
-    @FindBy(xpath = "//span[@id='payeeName']")
-    public WebElement payingControlText;
+    @FindBy(xpath = "//*[@id='billpayResult']/h1")
+    public WebElement billPaymentCompleteText;
 
     @FindBy(linkText = "Accounts Overview")
     public WebElement accountsOverviewButton;
 
     @FindBy(xpath = "//table[@id='accountTable']//td/a")
     public WebElement accountButton;
-
-    @FindBy(xpath = "//table[@id='transactionTable']//td/a")
-    public List<WebElement>transactionList;
 
     @FindBy (xpath = "(//div[@id='rightPanel']//td)[6]")
     public WebElement controlBillPay;
