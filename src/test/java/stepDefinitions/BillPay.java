@@ -47,7 +47,6 @@ public class BillPay {
     @Then("The user displays the successful pay message")
     public void theUserDisplaysTheSuccessfulPayMessage() {
         element.wait.until(ExpectedConditions.visibilityOf(element.billPaymentCompleteText));
-        System.out.println("text:"+element.billPaymentCompleteText.getText());
         Assert.assertTrue(element.billPaymentCompleteText.getText().contains("Bill Payment Complete"));
         Assert.assertTrue(element.billPaymentCompleteText.isDisplayed());
     }
