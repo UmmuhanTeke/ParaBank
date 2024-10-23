@@ -189,14 +189,17 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//input[@class='button']")
     public WebElement openNewAccountButton;
 
-    @FindBy(xpath = "//div[@id='openAccountResult']//h1")
+    @FindBy(xpath = "//div[@id='openAccountResult']//p")
     public WebElement accountOpenedText;
 
     @FindBy(id = "newAccountId")
     public WebElement accountNumberClick;
 
-    @FindBy(xpath = "//div[@id='accountDetails']/table/tbody/tr")
-    public List<WebElement> accountDetails;
+    @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[2]")
+    public WebElement accountDetailsNumber;
+
+    @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[4]")
+    public WebElement accountName;
 
     @FindBy(xpath = "//*[text()='Funds Transfer Received']")
     public WebElement fundsTransferClick;
