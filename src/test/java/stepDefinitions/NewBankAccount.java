@@ -12,7 +12,7 @@ import java.util.List;
 public class NewBankAccount {
     LeftNav ln = new LeftNav();
 
-    @When("Click on the Element in Content")
+    @When("The user clicks on the Element in Content")
     public void clickOnTheElementInContent(DataTable buttons) {
         List<String> links = buttons.asList();
 
@@ -21,7 +21,7 @@ public class NewBankAccount {
         }
     }
 
-    @And("The user is directed to the bank account creating page")
+    @Then("The user is directed to the bank account creating page")
     public void theUserIsDirectedToTheBankAccountCreatingPage() {
         ln.verifyContainsText(ln.newAccountPageControl, "Open New Account");
     }
@@ -49,7 +49,21 @@ public class NewBankAccount {
 
     @Then("The user confirms the successful creation of the new bank account")
     public void theUserConfirmsTheSuccessfulCreationOfTheNewBankAccount() {
-        System.out.println("abc");
-        ln.verifyContainsText(ln.accountOpenedText, "account is now open");
+        ln.verifyContainsText(ln.accountOpenedText, "Congratulations");
+        System.out.println(ln.accountOpenedText.getText());
+    }
+
+    @And("The user clicks on the generated account number.")
+    public void theUserClicksOnTheGeneratedAccountNumber() {
+        ln.myClick(ln.accountNumberClick);
+    }
+
+    @Then("The user verifies their information in the account details")
+    public void theUserVerifiesTheirInformationInTheAccountDetails() {
+        System.out.println(ln.accountNumberClick.getText());
+        // ln.verifyContainsText(ln.accountDetailsNumber, ln.accountNumberClick.getText());
+
+//        if (ln.accountDetailsNumber.getText().equals(ln.accountNumberClick.getText())){
+//            System.out.println("Hesap numaraları eşleşti");}
     }
 }
