@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.LeftNav;
 import utilities.ConfigReader;
@@ -53,7 +54,8 @@ public class ContactUpdateInfo {
 
     @Then("The user verifies the confirmation message on the Profile Updated page")
     public void theUserVerifiesTheConfirmationMessageOnTheProfileUpdatedPage() {
-        Assert.assertTrue(ln.updateProfileText.getAttribute("innerHTML").contains("Your updated"));
+        ln.wait.until(ExpectedConditions.textToBePresentInElement(ln.updateProfileText,"Your updated"));
+        ln.verifyContainsText(ln.updateProfileText, "Your updated");
     }
 
     @And("The user clicks on the Log Out button")
