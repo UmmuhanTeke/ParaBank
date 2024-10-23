@@ -166,6 +166,37 @@ public class LeftNav extends ParentPage{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //----------------------------ÜMMÜHAN-----------------------------------
 
     @FindBy(xpath = "//a[text()='Open New Account']")
@@ -192,7 +223,7 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//div[@id='openAccountResult']//p")
     public WebElement accountOpenedText;
 
-    @FindBy(id = "newAccountId")
+    @FindBy(xpath = "//a[@id='newAccountId']")
     public WebElement accountNumberClick;
 
     @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[2]")
@@ -201,11 +232,53 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[4]")
     public WebElement accountName;
 
-    @FindBy(xpath = "//*[text()='Funds Transfer Received']")
-    public WebElement fundsTransferClick;
-
     @FindBy(xpath = "//select[@id='fromAccountId']/option")
     public List<WebElement> selectAccountNumber;
+
+    @FindBy(xpath = "//*[text()='Update Contact Info']")
+    public WebElement updateContactInfoButton;
+
+    @FindBy(xpath = "//div[@id='updateProfileResult']/p")
+    public WebElement updateProfileText;
+
+    @FindBy(xpath = "//div[@id='updateProfileForm']/h1")
+    public WebElement updateProfileControl;
+
+    @FindBy(xpath = "//table[@class='form2']/tbody/tr")
+    public List<WebElement> updateProfileDetails;
+
+    @FindBy(xpath = "//*[text()='Log Out']")
+    public WebElement logOutButton;
+
+    @FindBy(xpath = "(//tr/td)[5]/input")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//span[@id='lastName-error']")
+    public WebElement lastNameError;
+
+    @FindBy(xpath = "(//tr/td)[8]/input")
+    public WebElement address;
+
+    @FindBy(xpath = "//span[@id='street-error']")
+    public WebElement addressError;
+
+    @FindBy(xpath = "(//tr/td)[11]/input")
+    public WebElement city;
+
+    @FindBy(xpath = "//span[@id='city-error']")
+    public WebElement cityError;
+
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement username;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement password;
+
+    @FindBy(xpath = "//input[@class='button']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//input[@type='button']")
+    public WebElement updateProfileButton;
 
     public WebElement getWebElement(String strWebElement){
         switch (strWebElement){
@@ -214,9 +287,57 @@ public class LeftNav extends ParentPage{
             case "selectSavings": return this.selectSavings;
             case "selectChecking": return this.selectChecking;
             case "payeeNameBox":return this.payeeNameBox;
+            case "updateContactInfoButton": return this.updateContactInfoButton;
+            case "updateProfileButton": return this.updateProfileButton;
         }
         return null;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
