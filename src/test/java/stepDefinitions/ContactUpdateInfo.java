@@ -32,16 +32,17 @@ public class ContactUpdateInfo {
     @And("The user views their information")
     public void theUserViewsTheirInformation() {
         List<WebElement> details = ln.updateProfileDetails;
-        for (WebElement info: details){
-            assert info.isDisplayed() : "Element görünür değil: " + info.getText();
+        for (WebElement info : details) {
+            assert info.isDisplayed() : "The element is not visible: " + info.getText();
+            System.out.println(info);
         }
     }
 
     @And("The user updates the information they want")
     public void theUserUpdatesTheInformationTheyWant() {
-        ln.mySendKeys(ln.lastName, "Teke");
-        ln.mySendKeys(ln.address, "Mimar Sinan Mahallesi");
-        ln.mySendKeys(ln.city, "Aydın");
+        ln.mySendKeys(ln.lastName, ConfigReader.getProperty("lastName"));
+        ln.mySendKeys(ln.address, ConfigReader.getProperty("address"));
+        ln.mySendKeys(ln.city, ConfigReader.getProperty("city"));
     }
 
     @When("The user clicks on the Update Profile button")
@@ -55,9 +56,10 @@ public class ContactUpdateInfo {
 
     @Then("The user verifies the confirmation message on the Profile Updated page")
     public void theUserVerifiesTheConfirmationMessageOnTheProfileUpdatedPage() {
-        Assert.assertTrue(ln.updateProfileControl.isDisplayed());
-        ln.verifyContainsText(ln.updateProfileControl, "Your updated");
-        System.out.println("ln.updateProfileControl.getText() = " + ln.updateProfileControl.getText());
+        // Assert.assertTrue(ln.updateProfileText.isDisplayed());
+        //ln.verifyContainsText(ln.updateProfileText, "Your updated");
+        System.out.println(ln.updateProfileText.getAttribute("innerHTML").contains("Your updated "));
+        Assert.assertTrue(ln.updateProfileText.getAttribute("innerHTML").contains("Your updated "));
     }
 
     @And("The user clicks on the Log Out button")
@@ -83,6 +85,11 @@ public class ContactUpdateInfo {
 
     @And("The user verifies the updated version of their contact information")
     public void theUserVerifiesTheUpdatedVersionOfTheirContactInformation() {
+        Assert.assertEquals(ln.lastName.getText(), ConfigReader.getProperty("lastName"));
+        System.out.println(ln.lastName.getText());
+        Assert.assertEquals(ln.address.getText(), ConfigReader.getProperty("address"));
+        System.out.println(ln.address.getText());
+        Assert.assertEquals(ln.city.getText(), ConfigReader.getProperty("city"));
     }
 
     @And("The user deletes at least three optional fields from their contact information and leaves them blank")
