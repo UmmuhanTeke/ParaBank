@@ -1,6 +1,5 @@
 package pages;
 
-import io.cucumber.java.ht.Le;
 import org.openqa.selenium.support.ui.Select;
 import utilities.ConfigReader;
 import utilities.GWD;
@@ -14,7 +13,6 @@ import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class ParentPage {
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(ConfigReader.getIntProperty("explicit.wait")));
@@ -79,7 +77,7 @@ public class ParentPage {
         return isFound;
     }
 
-    public void wait(int sn) {
+    public void Wait(int sn) {
         try {
             Thread.sleep(sn * 1000L);
         } catch (InterruptedException e) {

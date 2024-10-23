@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.LeftNav;
 
 import java.util.List;
@@ -29,13 +29,12 @@ public class NewBankAccount {
 
     @And("The user selects the {string} type from the drop-down menu")
     public void theUserSelectsTheTypeFromTheDropDownMenu(String accountType) {
-        ln.selectByValue(ln.selectMenu, accountType);
+        ln.selectByText(ln.selectMenu, accountType);
     }
 
     @And("The user receives a warning that the new bank account should have a minimum balance")
     public void theUserReceivesAWarningThatTheNewBankAccountShouldHaveAMinimumBalance() {
         ln.verifyContainsText(ln.minBalanceText, " minimum");
-        System.out.println("ln.minBalanceText.getText() = " + ln.minBalanceText.getText());
     }
 
     @And("The user selects the accountNumber from the Drop-Down menu")
@@ -51,7 +50,6 @@ public class NewBankAccount {
     @Then("The user confirms the successful creation of the new bank account")
     public void theUserConfirmsTheSuccessfulCreationOfTheNewBankAccount() {
         ln.verifyContainsText(ln.accountOpenedText, "Congratulations");
-        System.out.println(ln.accountOpenedText.getText());
     }
 
     @And("The user clicks on the generated account number.")
@@ -59,11 +57,9 @@ public class NewBankAccount {
         ln.myClick(ln.accountNumberClick);
     }
 
-    @Then("The user verifies their information in the account details")
-    public void theUserVerifiesTheirInformationInTheAccountDetails() {
-        System.out.println(ln.accountDetailsNumber.getText());
-        System.out.println(ln.accountDetailsNumber.getAttribute("innerHTML").equalsIgnoreCase(ln.accountNumberClick.getText()));
-        Assert.assertTrue(ln.accountDetailsNumber.getAttribute("innerHTML").equalsIgnoreCase(ln.accountNumberClick.getText()));
-        ln.verifyContainsText(ln.accountDetailsNumber, ln.accountNumberClick.getText());
+    @Then("The user verifies their information in the account details {string}")
+    public void theUserVerifiesTheirInformationInTheAccountDetails(String text) {
+        ln.wait.until(ExpectedConditions.textToBePresentInElement(ln.accountType, text));
+        ln.verifyContainsText(ln.accountType, text);
     }
 }

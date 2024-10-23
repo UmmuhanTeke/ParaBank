@@ -16,9 +16,9 @@ Feature: Open a Bank Account Functionality
       | openNewAccountButton |
     Then The user confirms the successful creation of the new bank account
     And The user clicks on the generated account number.
-    Then The user verifies their information in the account details
+    Then The user verifies their information in the account details "<accountType>"
 
     Examples:
       | accountType |
-      | 0           |
-      | 1           |
+      | CHECKING    |
+      | SAVINGS     |
