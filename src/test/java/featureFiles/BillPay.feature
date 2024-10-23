@@ -1,6 +1,5 @@
 Feature: Bill Pay Functionality
 
-
   Background:
     Given The user navigates to the ParaBank website
     When The user types username and password and clicks on the login button
