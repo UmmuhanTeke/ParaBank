@@ -194,6 +194,22 @@ public class LeftNav extends ParentPage{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //----------------------------ÜMMÜHAN-----------------------------------
 
     @FindBy(xpath = "//a[text()='Open New Account']")
