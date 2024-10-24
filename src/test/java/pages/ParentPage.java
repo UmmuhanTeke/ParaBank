@@ -46,18 +46,6 @@ public class ParentPage {
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
-    public void selectByValue(WebElement element, String value) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-        Select menu = new Select(element);
-        menu.selectByValue(value);
-    }
-
-    public void selectByIndex(WebElement element, String index) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-        Select menu = new Select(element);
-        menu.selectByValue(index);
-    }
-
     public void selectByText(WebElement element, String text) {
         wait.until(ExpectedConditions.visibilityOf(element));
         Select select = new Select(element);
