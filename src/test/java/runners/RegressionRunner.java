@@ -5,10 +5,13 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         tags = "@Regression",
-        features = {"src/test/java/featureFiles"},
+        features = {"src/test/java/featureFiles/Register.feature",
+                "src/test/java/featureFiles/Login.feature",
+                "src/test/java/featureFiles/BillPay.feature",
+                "src/test/java/featureFiles/NewBankAccount.feature"},
         glue = {"stepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
-public class RegressionRunner extends AbstractTestNGCucumberTests{
+public class RegressionRunner extends AbstractTestNGCucumberTests {
 }

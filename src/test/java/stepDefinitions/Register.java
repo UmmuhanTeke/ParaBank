@@ -10,7 +10,6 @@ import utilities.GWD;
 import java.util.Locale;
 
 public class Register {
-
     Login login = new Login();
     Faker faker = new Faker(new Locale("en-US"));
 
@@ -23,33 +22,21 @@ public class Register {
     public void fillsTheAreasGivenInTheCustomerData() {
         do {
             login.myClick(login.registerBtn);
-
             login.mySendKeys(login.firstName, faker.name().firstName());
-
             login.mySendKeys(login.lastName, faker.name().lastName());
-
             login.mySendKeys(login.address, faker.address().fullAddress());
-
             login.mySendKeys(login.city, faker.address().city());
-
             login.mySendKeys(login.state, faker.address().state());
-
             login.mySendKeys(login.zipCode, faker.address().zipCode());
-
             login.mySendKeys(login.phoneNumber, faker.phoneNumber().cellPhone());
-
             login.mySendKeys(login.ssn, faker.idNumber().ssnValid());
 
             ConfigReader.updateProperty("username");
-
             login.mySendKeys(login.registerUsername, ConfigReader.getProperty("username"));
 
             ConfigReader.updateProperty("password");
-
             login.mySendKeys(login.registerPassword, ConfigReader.getProperty("password"));
-
             login.mySendKeys(login.confirmPassword, ConfigReader.getProperty("password"));
-
             login.myClick(login.registerSubmitBtn);
 
         } while (found());
