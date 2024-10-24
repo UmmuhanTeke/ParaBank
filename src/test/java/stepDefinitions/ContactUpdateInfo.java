@@ -83,6 +83,7 @@ public class ContactUpdateInfo {
     public void theUserVerifiesTheUpdatedVersionOfTheirContactInformation() {
         ln.wait.until(ExpectedConditions.textToBePresentInElement(ln.welcomeControl, "Welcome"));
         System.out.println(ln.welcomeControl.getText());
+
         //Assert.assertTrue(ln.welcomeControl.getText().contains(ConfigReader.getProperty("firstName")));
         //Assert.assertTrue(ln.welcomeControl.getText().contains(ConfigReader.getProperty("lastName")));
     }
