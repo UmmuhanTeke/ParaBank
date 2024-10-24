@@ -226,9 +226,6 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "(//div[@id='accountDetails']//tr/td)[4]")
     public WebElement accountType;
 
-    @FindBy(xpath = "(//div[@id='accountDetails']/table/tbody/tr/td)[4]")
-    public WebElement accountName;
-
     @FindBy(xpath = "//select[@id='fromAccountId']/option")
     public List<WebElement> selectAccountNumber;
 
@@ -250,22 +247,22 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//*[text()='Log Out']")
     public WebElement logOutButton;
 
-    @FindBy(xpath = "(//tr/td)[5]/input")
-    public WebElement lastName;
+    @FindBy(css = "[id='customer.address.state']")
+    public WebElement state;
 
-    @FindBy(xpath = "//span[@id='lastName-error']")
-    public WebElement lastNameError;
+    @FindBy(id = "state-error")
+    public WebElement stateError;
 
     @FindBy(xpath = "(//tr/td)[8]/input")
     public WebElement address;
 
-    @FindBy(xpath = "//span[@id='street-error']")
+    @FindBy(id = "street-error")
     public WebElement addressError;
 
     @FindBy(xpath = "(//tr/td)[11]/input")
     public WebElement city;
 
-    @FindBy(xpath = "//span[@id='city-error']")
+    @FindBy(id = "city-error")
     public WebElement cityError;
 
     @FindBy(css = "input[id='customer.firstName']")
@@ -273,6 +270,9 @@ public class LeftNav extends ParentPage{
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement username;
+
+    @FindBy(css = "input[id='customer.lastName']")
+    public WebElement lastName;
 
     @FindBy(xpath = "//input[@name='password']")
     public WebElement password;
