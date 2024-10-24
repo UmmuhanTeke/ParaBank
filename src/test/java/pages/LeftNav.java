@@ -78,136 +78,47 @@ public class LeftNav extends ParentPage{
     @FindBy(linkText = "Bill Payment to Natural Gas Bill")
     public WebElement billPayeeNatGas;
 
+    @FindBy(linkText = "Request Loan")
+    public WebElement requestLoanButton;
 
+    @FindBy(xpath = "//input[@id='amount']")
+    public WebElement loanAmountBox;
 
+    @FindBy(xpath = "//input[@id='downPayment']")
+    public WebElement downPaymentBox;
 
+    @FindBy (xpath = "//input[@value='Apply Now']")
+    public WebElement applyNowButton;
 
+    @FindBy(xpath = "//*[@id='requestLoanResult']/h1")
+    public WebElement loanReqProcessText;
 
+    @FindBy(xpath = "//td[text()='Approved']")
+    public WebElement statusApprovedText;
 
+    @FindBy(xpath = "//div[@id='loanRequestApproved']/p")
+    public WebElement approvedText;
 
+    @FindBy(xpath = "//a[@id='newAccountId']")
+    public WebElement newAccountNumberBtn;
 
+    @FindBy(xpath = "//div[@id='accountDetails']/h1")
+    public WebElement accountDetailsText;
 
+    @FindBy(xpath = "//*[text()='LOAN']")
+    public WebElement loanAccountText;
 
+    @FindBy(xpath = "//td[@id='balance']")
+    public WebElement balanceText;
 
+    @FindBy(xpath = "//p[@id='noTransactions']/b")
+    public WebElement noTransactionText;
 
+    @FindBy(xpath = "//td[text()='Denied']")
+    public WebElement deniedText;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//p[@class='error'])[1]")
+    public WebElement errorMessage;
 
 
     //----------------------------ÜMMÜHAN-----------------------------------
@@ -308,158 +219,13 @@ public class LeftNav extends ParentPage{
             case "payeeNameBox":return this.payeeNameBox;
             case "updateContactInfoButton": return this.updateContactInfoButton;
             case "updateProfileButton": return this.updateProfileButton;
+            case "requestLoanButton": return this.requestLoanButton;
+            case "loanAmountBox": return this.loanAmountBox;
+            case "downPaymentBox": return this.downPaymentBox;
+            case "applyNowButton": return this.applyNowButton;
         }
         return null;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //--------------------------------SONGÜL-------------------------------------------
 
