@@ -54,7 +54,7 @@ public class ContactUpdateInfo {
 
     @Then("The user verifies the confirmation message on the Profile Updated page")
     public void theUserVerifiesTheConfirmationMessageOnTheProfileUpdatedPage() {
-        ln.wait.until(ExpectedConditions.textToBePresentInElement(ln.updateProfileText,"Your updated"));
+        ln.wait.until(ExpectedConditions.textToBePresentInElement(ln.updateProfileText, "Your updated"));
         ln.verifyContainsText(ln.updateProfileText, "Your updated");
     }
 
