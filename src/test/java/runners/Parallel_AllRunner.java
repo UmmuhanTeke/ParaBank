@@ -11,6 +11,7 @@ import utilities.GWD;
         glue = {"stepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
+
 public class Parallel_AllRunner extends AbstractTestNGCucumberTests {
 
     @BeforeClass
