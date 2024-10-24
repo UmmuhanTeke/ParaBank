@@ -68,19 +68,19 @@ The environment we will use for this sprint: [https://parabank.parasoft.com/](ht
 
 >>>   As a user, I would like to transfer money from one of my current accounts to another. In this way, I can quickly meet my different financial needs.
 
-![US_606_TransferFunds](https://github.com/user-attachments/assets/6719bc3f-cebe-45c1-afae-b2a28d2d78f9)
+![US_605_TransferFunds](https://github.com/user-attachments/assets/6719bc3f-cebe-45c1-afae-b2a28d2d78f9)
 
 ### User Story (US606):
 
 >>>   As a user, I want to update the contact information in my profile. In this way, my address, my phone number and other contact information will be up-to-date and correct, so that I can communicate with the bank in a smooth way when communicating and transactions.
 
-![US_607_UpdateContact](https://github.com/user-attachments/assets/3c0c59ba-c8b5-445c-88af-7cc2bba97398)
+![US_606_UpdateContact](https://github.com/user-attachments/assets/3c0c59ba-c8b5-445c-88af-7cc2bba97398)
 
 ### User Story (US607):
 
 >>>   As a customer, I would like to apply for a loan through the Parabank website. This way, I can get the financing I need and follow the status of my application.
 
-![US_608_Loan_Credit](https://github.com/user-attachments/assets/ab688fc6-65b5-406f-972c-843cd8cae29e)
+![US_607_Loan_Credit](https://github.com/user-attachments/assets/ab688fc6-65b5-406f-972c-843cd8cae29e)
 
 ## Technologies and Tools Used
 
