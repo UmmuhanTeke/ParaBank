@@ -3,7 +3,7 @@
 
 <suite name="Parallel Tests" parallel="tests" thread-count="3">
 
-    <test name="test1">
+    <test name="Chrome">
         <parameter name="browserType" value="chrome"></parameter>
 
         <classes>
@@ -11,7 +11,7 @@
         </classes>
     </test>
 
-    <test name="test2">
+    <test name="Edge">
         <parameter name="browserType" value="edge"></parameter>
 
         <classes>
@@ -19,7 +19,7 @@
         </classes>
     </test>
 
-    <test name="test3">
+    <test name="Firefox">
         <parameter name="browserType" value="firefox"></parameter>
 
         <classes>
