@@ -89,6 +89,7 @@ public class ContactUpdateInfo {
     public void theUserDeletesAtLeastThreeOptionalFieldsFromTheirContactInformationAndLeavesThemBlank() {
         ln.myClearBox(ln.address);
         ln.myClearBox(ln.city);
+        ln.wait.until(ExpectedConditions.elementToBeClickable(ln.state));
         ln.myClearBox(ln.state);
     }
 

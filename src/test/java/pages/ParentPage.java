@@ -31,7 +31,6 @@ public class ParentPage {
 
     public void myClearBox(WebElement element){
         wait.until(ExpectedConditions.visibilityOf(element));
-        scrollToElement(element);
         element.clear();
     }
 
