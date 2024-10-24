@@ -87,10 +87,15 @@ public class ContactUpdateInfo {
 
     @And("The user deletes at least three optional fields from their contact information and leaves them blank")
     public void theUserDeletesAtLeastThreeOptionalFieldsFromTheirContactInformationAndLeavesThemBlank() {
+        ln.myClearBox(ln.address);
+        ln.myClearBox(ln.city);
+        ln.myClearBox(ln.state);
     }
 
     @Then("The user verifies the warning messages for the fields left blank")
     public void theUserVerifiesTheWarningMessagesForTheFieldsLeftBlank() {
+        ln.verifyContainsText(ln.addressError, "required");
+        ln.verifyContainsText(ln.cityError, "required");
+        ln.verifyContainsText(ln.stateError, "required");
     }
-
 }
