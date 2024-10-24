@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.LeftNav;
 import utilities.ConfigReader;
-
 import java.util.List;
 
 public class ContactUpdateInfo {
