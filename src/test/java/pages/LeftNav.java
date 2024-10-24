@@ -7,13 +7,11 @@ import utilities.GWD;
 
 import java.util.List;
 
-public class LeftNav extends ParentPage{
+public class LeftNav extends ParentPage {
 
     public LeftNav() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
-
-    //-----------------------------MERVE---------------------------------
 
     @FindBy(linkText = "Bill Pay")
     public WebElement billPayButton;
@@ -66,14 +64,14 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//table[@id='accountTable']//td/a")
     public WebElement accountButton;
 
-    @FindBy (xpath = "(//div[@id='rightPanel']//td)[6]")
+    @FindBy(xpath = "(//div[@id='rightPanel']//td)[6]")
     public WebElement controlBillPay;
 
     @FindBy(linkText = "Bill Payment to Electricity Bill")
     public WebElement billPayeeElectric;
 
     @FindBy(linkText = "Bill Payment to Water Bill")
-    public  WebElement billPayeeWater;
+    public WebElement billPayeeWater;
 
     @FindBy(linkText = "Bill Payment to Natural Gas Bill")
     public WebElement billPayeeNatGas;
@@ -87,7 +85,7 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//input[@id='downPayment']")
     public WebElement downPaymentBox;
 
-    @FindBy (xpath = "//input[@value='Apply Now']")
+    @FindBy(xpath = "//input[@value='Apply Now']")
     public WebElement applyNowButton;
 
     @FindBy(xpath = "//*[@id='requestLoanResult']/h1")
@@ -119,9 +117,6 @@ public class LeftNav extends ParentPage{
 
     @FindBy(xpath = "(//p[@class='error'])[1]")
     public WebElement errorMessage;
-
-
-    //----------------------------ÜMMÜHAN-----------------------------------
 
     @FindBy(xpath = "//a[text()='Open New Account']")
     public WebElement openNewAccount;
@@ -210,56 +205,31 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//input[@type='button']")
     public WebElement updateProfileButton;
 
-    public WebElement getWebElement(String strWebElement){
-        switch (strWebElement){
-            case "openNewAccount": return this.openNewAccount;
-            case "openNewAccountButton": return this.openNewAccountButton ;
-            case "selectSavings": return this.selectSavings;
-            case "selectChecking": return this.selectChecking;
-            case "payeeNameBox":return this.payeeNameBox;
-            case "updateContactInfoButton": return this.updateContactInfoButton;
-            case "updateProfileButton": return this.updateProfileButton;
-            case "requestLoanButton": return this.requestLoanButton;
-            case "loanAmountBox": return this.loanAmountBox;
-            case "downPaymentBox": return this.downPaymentBox;
-            case "applyNowButton": return this.applyNowButton;
+    public WebElement getWebElement(String strWebElement) {
+        switch (strWebElement) {
+            case "openNewAccount":
+                return this.openNewAccount;
+            case "openNewAccountButton":
+                return this.openNewAccountButton;
+            case "selectSavings":
+                return this.selectSavings;
+            case "selectChecking":
+                return this.selectChecking;
+            case "payeeNameBox":
+                return this.payeeNameBox;
+            case "updateContactInfoButton":
+                return this.updateContactInfoButton;
+            case "updateProfileButton":
+                return this.updateProfileButton;
+            case "requestLoanButton":
+                return this.requestLoanButton;
+            case "loanAmountBox":
+                return this.loanAmountBox;
+            case "downPaymentBox":
+                return this.downPaymentBox;
+            case "applyNowButton":
+                return this.applyNowButton;
         }
         return null;
     }
-
-    //--------------------------------SONGÜL-------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
