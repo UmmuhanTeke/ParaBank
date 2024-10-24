@@ -1,3 +1,4 @@
+@Smoke @Regression @Accounts
 Feature: Login Functionality
 
   Background:

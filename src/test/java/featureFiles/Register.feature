@@ -1,3 +1,4 @@
+@Smoke @Regression @Accounts
 Feature: Register Functionality
 
   Scenario: Creation of User Record

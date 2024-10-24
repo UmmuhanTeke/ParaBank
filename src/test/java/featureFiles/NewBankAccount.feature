@@ -1,3 +1,4 @@
+@Smoke @Regression @Accounts
 Feature: Open a Bank Account Functionality
 
   Background:

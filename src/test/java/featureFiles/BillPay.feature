@@ -1,3 +1,4 @@
+@Smoke @Regression @Payment
 Feature: Bill Pay Functionality
 
   Background:
