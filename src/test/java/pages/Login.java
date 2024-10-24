@@ -7,7 +7,7 @@ import utilities.GWD;
 
 public class Login extends ParentPage {
     public Login() {
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
 
     @FindBy(linkText = "Register")
