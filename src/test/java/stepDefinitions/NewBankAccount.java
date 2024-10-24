@@ -4,7 +4,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.LeftNav;
 
@@ -39,11 +38,8 @@ public class NewBankAccount {
 
     @And("The user selects the accountNumber from the Drop-Down menu")
     public void theUserSelectsTheAccountNumberFromTheDropDownMenu() {
-        List<WebElement> options = ln.selectAccountNumber;
-        if (!options.isEmpty()) {
-            options.get(0).click();
-        } else {
-            System.out.println("No account number");
+        for (int i = 0; i < ln.selectAccountNumber.size(); i++) {
+            ln.myClick(ln.selectAccountNumber.get(0));
         }
     }
 
