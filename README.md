@@ -121,10 +121,7 @@ The environment we will use for this sprint: [https://parabank.parasoft.com/](ht
 
 **2. Parallel Testing:** Execute tests in parallel on multiple browsers (Chrome and Firefox).
 
-**3. XML Configuration:** Run test cases from an XML file.
-
-**4. Smoke and Regression Testing:** Separate XML files for smoke and regression test cases.
-
+**3. Smoke and Regression Testing:** Separate classes were created for smoke and regression test cases within the runners package.
 
 ## User Stories & Contributors
 
