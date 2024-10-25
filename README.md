@@ -11,7 +11,7 @@
 - [Technologies and Tools Used](#technologies-and-tools-used)
 - [Prerequisites](#prerequisites)
 - [Project Requirements](#project-requirements)
-- [User Stories & Contributors](#user-stories-&-contributors)
+- [User Stories & Contributors](#user-stories-contributors)
 - [License](#license)
 
 ## Project Description:
