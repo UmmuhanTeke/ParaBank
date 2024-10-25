@@ -191,7 +191,7 @@ public class LeftNav extends ParentPage {
     public WebElement firstName;
 
     @FindBy(xpath = "//input[@name='username']")
-    public WebElement username;
+    public WebElement userName;
 
     @FindBy(css = "input[id='customer.lastName']")
     public WebElement lastName;

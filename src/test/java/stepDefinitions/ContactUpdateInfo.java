@@ -64,7 +64,7 @@ public class ContactUpdateInfo {
 
     @When("The user logs in to the site again")
     public void theUserLogsInToTheSiteAgain() {
-        ln.mySendKeys(ln.username, ConfigReader.getProperty("username"));
+        ln.mySendKeys(ln.userName, ConfigReader.getProperty("username"));
         ln.mySendKeys(ln.password, ConfigReader.getProperty("password"));
         ln.myClick(ln.loginButton);
     }
