@@ -205,6 +205,36 @@ public class LeftNav extends ParentPage {
     @FindBy(xpath = "//input[@type='button']")
     public WebElement updateProfileButton;
 
+    @FindBy(linkText = "Transfer Funds")
+    public WebElement transferFunds;
+
+    @FindBy(xpath = "//form[@id='transferForm']/p/b")
+    public WebElement transferFundsControl;
+
+    @FindBy(linkText = "Accounts Overview")
+    public WebElement accountsOverview;
+
+    @FindBy(css = "input[id='amount']")
+    public WebElement amountText;
+
+    @FindBy(css = "input[value='Transfer']")
+    public WebElement transferBtn;
+
+    @FindBy(css = "select[id='fromAccountId'] option")
+    public List<WebElement> fromAccountSlc;
+
+    @FindBy(css = "select[id='toAccountId'] option")
+    public List<WebElement> toAccountSlc;
+
+    @FindBy(xpath = "//span[@id='amountResult']")
+    public WebElement amountControl;
+
+    @FindBy(xpath = "//table[@id='accountTable']/tbody/tr/td/a")
+    public WebElement tabloAmount;
+
+    @FindBy(xpath = "//div[@id='accountDetails']/h1")
+    public WebElement accountDetails;
+
     public WebElement getWebElement(String strWebElement) {
         switch (strWebElement) {
             case "openNewAccount":
@@ -229,6 +259,14 @@ public class LeftNav extends ParentPage {
                 return this.downPaymentBox;
             case "applyNowButton":
                 return this.applyNowButton;
+            case "transferFunds":
+                return this.transferFunds;
+            case "accountsOverview":
+                return this.accountsOverview;
+            case "amountText":
+                return this.amountText;
+            case "transferBtn":
+                return this.transferBtn;
         }
         return null;
     }
