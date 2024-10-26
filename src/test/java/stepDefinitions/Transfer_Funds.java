@@ -56,7 +56,7 @@ public class Transfer_Funds {
 
         elements.myClick(elements.accountOverview);
         elements.myClick(elements.fundsTransferSent);
-        Assert.assertTrue(elements.transactionDetails.getText().contains("Transaction Details"));
+        elements.verifyContainsText(elements.transactionDetails,"Transaction Details"););
     }
 
     @When("The user saves the transaction id from the transfer confirmation message")
