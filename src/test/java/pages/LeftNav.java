@@ -270,4 +270,40 @@ public class LeftNav extends ParentPage {
         }
         return null;
     }
+
+    @FindBy(xpath = "//a[text()='Transfer Funds']")
+    public WebElement transFerFunds;
+
+    @FindBy(id = "amount")
+    public WebElement amount;
+
+    @FindBy(xpath = "(//select[@class='input'])[1]")
+    public List<WebElement> fromAccount;
+
+    @FindBy(xpath = "(//select[@class='input'])[2]")
+    public List<WebElement> toAccount;
+
+    @FindBy(xpath = "//input[@class='button']")
+    public List<WebElement> transFer;
+
+    @FindBy(xpath = "(//h1[@class='title'])[3]")
+    public WebElement confirmationMessage;
+
+    @FindBy(xpath = "//*[text()='Accounts Overview']")
+    public WebElement accountOverview;
+
+    @FindBy(xpath = "(//*[text()='Funds Transfer Sent']")
+    public WebElement fundsTransferSent;
+
+    @FindBy(xpath = "//h1[text()='Transaction Details']")
+    public WebElement transactionDetails;
+
+    @FindBy(xpath = "//*[text()='Find Transactions']")
+    public WebElement findTransactions;
+
+    @FindBy(id = "['transactionId']")
+    public WebElement findByTransactionID;
+
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
+    public WebElement findTransactionsButton;
 }

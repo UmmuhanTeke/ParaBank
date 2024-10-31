@@ -4,7 +4,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import pages.LeftNav;
 import utilities.ConfigReader;
 
@@ -47,13 +46,11 @@ public class Transfer_Funds {
 
     @Then("The user checks the amount and receiver account in the confirmation message")
     public void the_user_checks_the_amount_and_receiver_account_in_the_confirmation_message() {
-
         elements.verifyContainsText(elements.confirmationMessage, "Transfer Complete!!");
     }
 
     @When("The user clicks on find transactions in the left navigation menu")
     public void the_user_clicks_on_find_transactions_in_the_left_navigation_menu(DataTable dataTable) {
-
         elements.myClick(elements.accountOverview);
         elements.myClick(elements.fundsTransferSent);
         elements.verifyContainsText(elements.transactionDetails,"Transaction Details");
@@ -61,13 +58,11 @@ public class Transfer_Funds {
 
     @When("The user saves the transaction id from the transfer confirmation message")
     public void the_user_saves_the_transaction_id_from_the_transfer_confirmation_message() {
-
         elements.myClick(elements.findTransactions);
     }
 
     @When("The user enters the saved transaction id and clicks the button")
     public void the_user_enters_the_saved_transaction_id_and_clicks_the_button(DataTable dataTable) {
-
         elements.mySendKeys(elements.findByTransactionID, " ");
         elements.myClick(elements.findTransactionsButton);
     }

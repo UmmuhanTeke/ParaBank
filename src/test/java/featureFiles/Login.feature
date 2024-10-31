@@ -11,4 +11,3 @@ Feature: Login Functionality
   Scenario: Login With invalid username and password
     When  The user types invalid username and invalid password and clicks on the login button
     Then  Error message should be displayed
-

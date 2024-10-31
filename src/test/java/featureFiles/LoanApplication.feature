@@ -35,8 +35,3 @@ Feature: Loan Application
       | applyNowButton |
 
     Then The user displays the denied message
-
-
-
-
-

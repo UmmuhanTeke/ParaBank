@@ -29,8 +29,3 @@ Feature: Bill Pay Functionality
     Then The user verifies the details of the Bill Pay information to the Electricity Bill
     Then The user verifies the details of the Bill Pay information to the Water Bill
     Then The user verifies the details of the Bill Pay information to the Natural Gas Bill
-
-
-
-
-
