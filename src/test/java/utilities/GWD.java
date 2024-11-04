@@ -33,7 +33,7 @@ public class GWD {
                     break;
             }
             threadDriver.get().manage().window().maximize();
-            threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ConfigReader.getIntProperty("explicit.wait")));
+            threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ConfigReader.getIntProperty("pageLoadTimeout")));
         }
         return threadDriver.get();
     }
