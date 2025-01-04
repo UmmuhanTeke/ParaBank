@@ -132,6 +132,6 @@ The environment we will use for this sprint: [https://parabank.parasoft.com/](ht
 | [Merve Kaya](https://github.com/kayyamervee)              | QA Automation Engineer                |  [US603 - US607]   |
 | [Songül Çam](https://github.com/songulcam)                | QA Automation Engineer                |  [US605]           |
 
-## License  
 
+## License  
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
